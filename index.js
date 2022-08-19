@@ -5,6 +5,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
+const port = process.env.PORT || 3333
+
 app.use(
   express.urlencoded({
     extended: true
@@ -26,6 +28,6 @@ mongoose
   .then(() => {
     console.log('Connected to mongoBD')
 
-    app.listen(3333)
+    app.listen(port)
   })
   .catch(err => console.log(err))
